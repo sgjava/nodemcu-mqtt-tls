@@ -33,19 +33,19 @@ script, but I've included a copy [locally](https://raw.githubusercontent.com/sgj
 * Copy generated certs (use actual file names which are prefixed by hostname)
     * `sudo cp myhost.crt myhost.key /etc/mosquitto/certs/.`
 * Configure mosquitto for SSL (use actual finel names for certs)
-* `sudo nano /etc/mosquitto/conf.d/default.conf`
-```# Plain MQTT protocol
-listener 1883
+    * `sudo nano /etc/mosquitto/conf.d/default.conf`
+    ```# Plain MQTT protocol
+    listener 1883
 
-# End of plain MQTT configuration
+    # End of plain MQTT configuration
 
-# MQTT over TLS/SSL
-listener 8883
-cafile /etc/mosquitto/ca_certificates/ca.crt
-certfile /etc/mosquitto/certs/myhost.crt
-keyfile /etc/mosquitto/certs/myhost.key
+    # MQTT over TLS/SSL
+    listener 8883
+    cafile /etc/mosquitto/ca_certificates/ca.crt
+    certfile /etc/mosquitto/certs/myhost.crt
+    keyfile /etc/mosquitto/certs/myhost.key
 
-# End of MQTT over TLS/SLL configuration
+    # End of MQTT over TLS/SLL configuration
 ```
 * `sudo service mosquitto restart`
 * Open terminal subscribe to topic
