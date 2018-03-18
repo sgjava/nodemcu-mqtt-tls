@@ -12,7 +12,8 @@ judicious as you add additional code on the ESP8266.
 ## Configure MQTT broker
 I'm using a Ubuntu 16.04 server via VirtualBox to create the broker. Eventually
 this would be installed on a SBC like a NanoPi Duo to handle messages 24/7 with
-your connected IoT devices.
+your connected IoT devices. Note this example uses onl server certificate. You
+can use client certificates to validate calling client.
 * Start with fresh Ubuntu 16.04 server install and apply all upgrades.
 * Install Mosquitto broker and clients
     * `sudo apt-get install mosquitto mosquitto-clients git-core`
@@ -48,8 +49,15 @@ keyfile /etc/mosquitto/certs/myhost.key
 ```
 * `sudo service mosquitto restart`
 * Open terminal subscribe to topic
-    * `mosquitto_sub -h localhost -t test -p 8883`
+    * `mosquitto_sub -h localhost -t test -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt`
 * Open terminal publish to topic
-    * `mosquitto_pub -h localhost -t test -m "hello test"`
+    * `mosquitto_pub -h localhost -t test -m "hello ssl" -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt`
     * You should see message on terminal running mosquitto_sub
     * Press Ctrl-C on terminal running mosquitto_sub
+
+## Configure NodeMCU
+[Flash](https://github.com/sgjava/nodemcu-lolin) your ESP8266 with latest
+NodeMCU dev branch. Select MTQQ and TLS modules with automated build.
+
+
+
