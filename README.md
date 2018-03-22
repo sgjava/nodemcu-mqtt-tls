@@ -104,8 +104,7 @@ one you see in the ESPlorer console when you run it the first time.
      * echo:hello (echos hello to device console)
      * gpio_write:1,0 (write 0 to pin 1)
 
-'''
-NodeMCU custom build by frightanic.com
+'''NodeMCU custom build by frightanic.com
 	branch: dev
 	commit: be53d5c9f399eb67895961ed840e766539a93cc1
 	SSL: true
@@ -117,6 +116,5 @@ ip: 192.168.1.69
 subscribed to node-000000-in
 =node.heap()
 14608
-> 
-'''   
+>'''   
      
