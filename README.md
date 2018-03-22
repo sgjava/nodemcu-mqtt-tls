@@ -115,6 +115,7 @@ NodeMCU custom build by frightanic.com
 > hostname: node-000000
 ip: 192.168.1.69
 subscribed to node-000000-in
+> hello
 =node.heap()
 14608
 >
