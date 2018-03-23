@@ -66,7 +66,8 @@ keyfile /etc/mosquitto/certs/myhost.key
 ### Set password 
 * `sudo mosquitto_passwd -c /etc/mosquitto/passwd <user_name>`
 * `sudo nano /etc/mosquitto/conf.d/default.conf`
-   ```password_file /etc/mosquitto/passwd
+
+```password_file /etc/mosquitto/passwd
 allow_anonymous false```
 * `sudo service mosquitto restart`
 * Open terminal subscribe to topic
