@@ -82,7 +82,7 @@ node-hostname-in. hostname is defined as node-node.chipid().
 Only one output topic "node-out" is used since hostname is
 passed as part of the response. You send commands to the input
 topic in the following format command:param1,param2, ...
-You can add your own commands by addint it to the action table
+You can add your own commands by adding it to the command table
 and writing a callback function.
 * Use [NodeMCU custom builds](https://nodemcu-build.com) to create a NodeMCU.
 Select dev branch and MQTT and TLS modules.
@@ -94,12 +94,16 @@ Select dev branch and MQTT and TLS modules.
      * main.lua
      * compile.lua     
      * init.lua     
-* Log into MQTT server with three terminals. Make sure the topic name is the
-one you see in the ESPlorer console when you run it the first time.
+* Open terminal subscribe to input topic. Make sure the topic name is the
+one you see in the ESPlorer console when you run it the first time
      * `mosquitto_sub -h localhost -t node-000000-in -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt -u <user_name> -P <password>`
+* Open terminal subscribe to output topic, so you can see results of command
+execution
      * `mosquitto_sub -h localhost -t node-out -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt -u <user_name> -P <password>`
+* Open terminal publish to topic. Make sure the topic name is the
+one you see in the ESPlorer console when you run it the first time
      * `mosquitto_pub -h localhost -t node-000000-in -m "echo:hello" -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt -u <user_name> -P <password>`
-     * The last command echos "hello" in the ESPlorer console
+     * This command echos "hello" in the ESPlorer console
 * Built in commands that can be called
      * echo:hello (echos hello to device console)
      * gpio_write:1,0 (write 0 to pin 1)
