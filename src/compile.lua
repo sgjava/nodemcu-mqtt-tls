@@ -1,3 +1,4 @@
+-- Compile source then delete source file.
 node.compile("config.lua")
 file.remove("config.lua")
 node.compile("wifi_connect.lua")
