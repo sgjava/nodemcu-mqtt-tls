@@ -68,7 +68,8 @@ keyfile /etc/mosquitto/certs/myhost.key
 * `sudo nano /etc/mosquitto/conf.d/default.conf`
   ```
   password_file /etc/mosquitto/passwd
-  allow_anonymous false```
+  allow_anonymous false
+  ```
 * `sudo service mosquitto restart`
 * Open terminal subscribe to topic
     * `mosquitto_sub -h localhost -t test -p 8883 --cafile /etc/mosquitto/ca_certificates/ca.crt -u <user_name> -P <password>`
