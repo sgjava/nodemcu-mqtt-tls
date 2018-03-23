@@ -6,12 +6,13 @@ installed on Ubuntu 16.04 server, but you should be able to configure MQTT
 broker on other distributions.
 
 I explored HTTPS, but this is not working with the HTTP module in the NodeMCU
-dev branch. In any event the TLS module uses quite a bit of memory, so you must
-be judicious as you add additional code on the ESP8266. The example main.lua
-module connects you to wifi and broker using TLS and password. There are two
-topics used by the device. One for input (commands and params) and an output
-topic for results. There are commands built in to do echo and write to a GPIO
-pin. You can add commands as needed.
+dev branch. In any event the TLS and  MQTT modules use quite a bit of memory,
+so you must be judicious as you add additional code on the ESP8266.
+
+The example main.lua module connects you to wifi and broker using TLS and
+user/password. There are two topics used by the device. One for input (commands
+and params) and an output topic for results. There are commands built in to do
+echo and write to a GPIO pin. You can add commands as needed.
 
 ## Configure MQTT broker
 I'm using a Ubuntu 16.04 server via VirtualBox to create the broker. Eventually
