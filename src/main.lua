@@ -77,7 +77,10 @@ end
 -- mqtt_message.
 function wifi_started()
   mqtt_topic_in = wifi.sta.gethostname() .. "-in"
-  mqtt_client(wifi.sta.gethostname(), mqtt_keepalive, mqtt_user, mqtt_password)
+  -- Only create mqtt.Client once
+  if m_client == nil then
+    mqtt_client(wifi.sta.gethostname(), mqtt_keepalive, mqtt_user, mqtt_password)
+  end
   mqtt_connect(mqtt_host, mqtt_port, mqtt_topic_in)
   m_client:on("message", mqtt_message)
 end
