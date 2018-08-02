@@ -2,7 +2,7 @@
 
 ![ESP8266 LoLin V3 NodeMCU](images/esp8266.png)
 How to configure NodeMCU to use MQTT with TLS encryption. The broker will be
-installed on Ubuntu 16.04 server, but you should be able to configure MQTT
+installed on Ubuntu 18.04 server, but you should be able to configure MQTT
 broker on other distributions.
 
 I explored HTTPS, but this is not working with the HTTP module in the NodeMCU
